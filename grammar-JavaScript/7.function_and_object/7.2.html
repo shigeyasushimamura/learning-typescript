@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Practice</title>
+  </head>
+  <body>
+    <h1>JavaScript Practice Page</h1>
+    <p id="message">Click the button to see magic happen!</p>
+    <button onclick="doSomething()">Click Me</button>
+
+    <script>
+      console.log("-------------------------------");
+
+      window.name = "John";
+
+      const person = {
+        name: "Tom",
+        hello: function () {
+          console.log("Hello, " + this.name);
+        },
+      };
+
+      person.hello();
+
+      const ref = person.hello;
+      ref();
+
+      console.log("topic!");
+
+      const person1 = {
+        name: "Taro",
+        hello: function () {
+          console.log("Hello, " + this.name);
+          a();
+
+          const person = {
+            name: "Jiro",
+            hello: function () {
+              console.log("Hello, " + this.name);
+              a();
+            },
+          };
+          person.hello();
+        },
+      };
+
+      person1.hello();
+
+      function a() {
+        console.log("Hello, " + this.name);
+      }
+
+      console.log("-------------------------------");
+    </script>
+  </body>
+</html>
