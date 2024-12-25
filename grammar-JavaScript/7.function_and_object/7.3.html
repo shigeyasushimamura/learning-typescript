@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Practice</title>
+  </head>
+  <body>
+    <h1>JavaScript Practice Page</h1>
+    <p id="message">Click the button to see magic happen!</p>
+    <button onclick="doSomething()">Click Me</button>
+
+    <script>
+      console.log("-------------------------------");
+
+      function a() {
+        console.log("hello " + this.name);
+      }
+
+      const tim = { name: "Tim" };
+
+      const b = a.bind(tim);
+
+      b();
+
+      a.apply(tim);
+      a.call(tim);
+
+      function fn2(name, ...names) {
+        console.log("hello " + name);
+        for (const n of names) {
+          console.log("good afternoon ", n);
+        }
+      }
+
+      fn2.call(tim, "Hogetaro");
+      // 配列で要素を渡せるapplyの方がcallより使いやすい
+      fn2.apply(tim, ["TTTT", "UUU", "VVV"]);
+
+      const ary = [1, 3, 4, 6];
+
+      // ES5記法
+      const result = Math.max.apply(null, ary);
+      console.log("result:", result);
+
+      // ES6記法
+      const result2 = Math.max(...ary);
+      console.log("result2:", result2);
+
+      console.log("-------------------------------");
+    </script>
+  </body>
+</html>

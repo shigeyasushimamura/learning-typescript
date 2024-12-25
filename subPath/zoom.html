@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Zoom Effect</title>
+    <style>
+      .image-container {
+        width: 300px; /* 固定サイズ */
+        height: 200px; /* 固定サイズ */
+        overflow: hidden; /* コンテナ外への画像の表示を隠す */
+        display: inline-block;
+        position: relative;
+      }
+      .image-container img {
+        width: 100%; /* コンテナ幅に合わせる */
+        height: 100%; /* コンテナ高さに合わせる */
+        object-fit: cover; /* 画像をコンテナ内にフィット */
+        transition: transform 0.3s ease-in-out;
+      }
+      .image-container:hover img {
+        transform: scale(1.2); /* 拡大倍率 */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hover to Zoom</h1>
+    <div class="image-container">
+      <img src="https://via.placeholder.com/600x400" alt="Sample Image" />
+    </div>
+  </body>
+</html>
