@@ -19,6 +19,59 @@
 
       const b = (name) => "Hello " + name;
 
+      const person = {
+        hello: function () {
+          return "hello Tom";
+        },
+      };
+
+      setTimeout(() => {
+        const x = person.hello();
+        console.log(x);
+      }, 1000);
+
+      function calcFactory(val, cb) {
+        return {
+          plus: function (target) {
+            val += target;
+            cb(val);
+          },
+        };
+      }
+
+      const calc = calcFactory(100, console.log);
+
+      const al = calcFactory(200, window.alert);
+
+      calc.plus(10);
+      // al.plus(10);
+
+      function factory() {
+        let value = 0;
+        return {
+          plus: function (target) {
+            value += target;
+          },
+          minus: function (target) {
+            value -= target;
+          },
+          multiply: function (target) {
+            value *= target;
+          },
+          divide: function (target) {
+            value /= target;
+          },
+          result: function () {
+            console.log(`value:${value}`);
+          },
+        };
+      }
+
+      const fn = factory();
+      fn.result();
+      fn.plus(100);
+      fn.result();
+
       console.log("-------------------------------");
     </script>
   </body>
