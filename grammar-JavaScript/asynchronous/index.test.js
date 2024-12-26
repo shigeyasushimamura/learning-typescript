@@ -1,6 +1,4 @@
-const { checkEmotion, speak } = process.env.TEST_SOLUTIONS
-  ? require("./solution")
-  : require("./index");
+const { checkEmotion, speak } = require("./index");
 
 const simulateSetTimeoutResolve = async (time) => {
   jest.advanceTimersByTime(time);
