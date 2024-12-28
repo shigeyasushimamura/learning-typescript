@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>JS</title>
+  </head>
+  <body>
+    <script>
+      // 通常のfunction関数
+      function a() {
+        console.log("a");
+      }
+
+      // 無名関数を変数に代入
+      const b = function () {
+        console.log("b");
+      };
+
+      // アロー関数
+      const c = () => {
+        console.log("c");
+      };
+
+      window.name = "John";
+
+      const person = {
+        name: "Taro",
+        hello: function () {
+          console.log(this.name);
+        },
+      };
+
+      // 下記パターン1
+      person.hello();
+
+      // 下記パターン2
+      const cb = person.hello;
+      cb();
+
+      // アロー関数はthisを取らない -> レキシカルスコープをたどってグローバルオブジェクトを参照
+      // 知識
+      // 通常関数がオブジェクトのメソッドとして呼ばれる場合、thisは呼び出し元オブジェクトを指す: パターン1
+      // 関数として実行される場合は、thisはグローバルオブジェクトを指す：パターン2
+      // アロー関数の場合は、thisを取らないため、オブジェクトのメソッドとして呼んでも、パターン1になる
+
+      const person2 = {
+        name: "Jiro",
+        hello: () => {
+          console.log(this.name);
+        },
+      };
+
+      // パターン2
+      person2.hello();
+      // パターン2
+      const cb2 = person2.hello;
+      cb2();
+    </script>
+  </body>
+</html>

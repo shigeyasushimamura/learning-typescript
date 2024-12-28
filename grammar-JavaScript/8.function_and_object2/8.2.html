@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>JS</title>
+  </head>
+  <body>
+    <script>
+      // コンストラクタ関数:オブジェクトを作成する関数
+      function A() {
+        prop = "hoge";
+      }
+
+      A.props = "hoge";
+      console.log(A);
+
+      // objはインスタンス
+      const obj = new A();
+
+      // コンストラクタ関数であることを強調するために一文字目が大文字
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      const p = new Person("Bob", 18);
+      console.log(p);
+
+      Person.prototype.hello = function () {
+        console.log("hello " + this.name);
+      };
+
+      const p2 = new Person("Jiro", 888);
+      p2.hello();
+
+      window.name = "window";
+      Person.prototype.hello2 = () => console.log("hello " + this.name);
+
+      const p3 = new Person("fefefef", 3333);
+      p3.hello2();
+
+      console.log("-----bind----");
+
+      function fn(ref) {
+        ref();
+      }
+
+      // hello windowが出る
+      // 関数実行になる
+      fn(p2.hello);
+
+      const p2Bind = p2.hello.bind(p2);
+
+      // bindによって新しいhello関数が作成される。この関数内のthisはp2オブジェクトを参照してる
+      // そのため今回はhello windowの代わりに、p2オブジェクトのname,つまりJiroがでる
+      fn(p2Bind);
+    </script>
+  </body>
+</html>
