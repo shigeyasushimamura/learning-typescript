@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
+import Article from "./Article";
 
-interface Post {
+export interface Post {
   userId: number;
   id: number;
   title: string;
@@ -10,6 +11,7 @@ interface Post {
 
 const ApiFetch = () => {
   const [postList, setPostList] = useState<Post[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     // axios
@@ -25,11 +27,26 @@ const ApiFetch = () => {
       .then((res) => {
         return res.json();
       })
-      .then((res) => {
+      .then((res: Post[]) => {
         console.log(res);
         setPostList(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        setError("データの取得に失敗しました");
       });
   }, []);
+
+  if (error) {
+    return (
+      <>
+        <section>
+          <h1>{error}</h1>
+          <button onClick={() => window.location.reload()}>再試行する</button>
+        </section>
+      </>
+    );
+  }
 
   return (
     <>
@@ -37,14 +54,7 @@ const ApiFetch = () => {
       <section>
         <h2>Post List</h2>
         {postList.map((post: Post) => {
-          return (
-            <article key={post.id}>
-              <h3>
-                {post.id}:{post.title}
-              </h3>
-              <p>{post.body}</p>
-            </article>
-          );
+          return <Article {...post} />;
         })}
       </section>
     </>

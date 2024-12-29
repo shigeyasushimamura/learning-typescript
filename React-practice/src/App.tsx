@@ -4,6 +4,7 @@ import Basic1 from "./components/Basic1";
 import Basic2 from "./components/Basic2";
 import MyBlog from "./components/MyBlog";
 import { Routes, Route } from "react-router-dom";
+import PostDetail from "./components/PostDetail";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/basic2" element={<Basic2 />}></Route>
         <Route path="myblog" element={<MyBlog />}></Route>
         <Route path="/apifetch" element={<ApiFetch />}></Route>
+        <Route path="/postDetail" element={<PostDetail />}></Route>
       </Routes>
     </>
   );

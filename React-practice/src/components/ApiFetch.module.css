@@ -1,0 +1,25 @@
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  background-color: white;
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.cardHeader {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  background-color: rgb(133, 206, 207);
+  padding: 20px;
+}
+
+.cardContent {
+  font-size: 1rem;
+  margin: 10px 0;
+  line-height: 1.2;
+  padding: 16px;
+}
