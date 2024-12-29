@@ -12,6 +12,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/" element={<Basic1 />}></Route>
         <Route path="myblog" element={<MyBlog />}></Route>
       </Routes>
     </>

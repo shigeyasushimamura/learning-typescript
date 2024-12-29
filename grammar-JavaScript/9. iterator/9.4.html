@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const todos = new Map();
+      const obj1 = { title: "shopping", completed: false };
+      const obj2 = { title: "golf", completed: false };
+
+      todos.set(1, obj1);
+      todos.set(2, obj2);
+
+      for (let [key, value] of todos) {
+        console.log(key, value);
+      }
+
+      const todo1 = todos.get(1);
+      todos.set(1, { ...todo1, completed: true });
+
+      for (let [key, value] of todos) {
+        console.log(key, value);
+      }
+    </script>
+  </body>
+</html>

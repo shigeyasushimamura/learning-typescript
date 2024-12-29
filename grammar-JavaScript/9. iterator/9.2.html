@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      <!-- // for.. of : iterator
+      // for...in enumerable
+      // Map: for .... of
+      // Object: for.. in
+      // Array: for ... of, for ... in -->
+      // set : for ... of
+
+      // Mapは文字列以外もキーにとれる
+      // objectは文字列のみをキーにとる
+
+      const map = new Map();
+      const key1 = {};
+      map.set(key1, "value1");
+      console.log(map.get(key1));
+      const key2 = function () {};
+      map.set(key2, "value2");
+
+      for (const k of map) {
+        console.log(k);
+      }
+
+      map.delete(key2);
+
+      const obj = {
+        a: 1,
+        b: 2,
+      };
+
+      for (const o in obj) {
+        console.log(o);
+      }
+    </script>
+  </body>
+</html>
