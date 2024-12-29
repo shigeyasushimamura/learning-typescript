@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { Post } from "./ApiFetch";
+import styles from "./PostDetail.module.css";
 
 const PostDetail = () => {
   const [searchParams] = useSearchParams();
@@ -40,18 +41,16 @@ const PostDetail = () => {
   }
 
   return (
-    <>
-      <header>
+    <article className={styles.article}>
+      <header className={styles.articleHeader}>
         <h1>記事詳細</h1>
+        <h2>{post.title}</h2>
       </header>
-
-      <main>
-        <article>
-          <header>{post.title}</header>
-          <section>{post.body}</section>
-        </article>
-      </main>
-    </>
+      <div className={styles.articleMetaInfo}>
+        <time dateTime="2024-12-31">投稿日:2024-12-31</time>
+      </div>
+      <section className={styles.articleContent}>{post.body}</section>
+    </article>
   );
 };
 

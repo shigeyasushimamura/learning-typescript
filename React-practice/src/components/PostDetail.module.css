@@ -1,0 +1,28 @@
+.article {
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: white;
+  margin: 4px;
+  height: 100vh;
+}
+
+.articleHeader {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: aquamarine;
+}
+
+.articleMetaInfo {
+  /* margin: 30px 0px; */
+  text-align: right;
+  padding: 20px 20px;
+  border-bottom: 1px solid black;
+}
+
+.articleContent {
+  padding: 20px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
