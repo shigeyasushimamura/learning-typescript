@@ -1,19 +1,18 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import ApiFetch from "./components/ApiFetch";
 import "./App.css";
 import Basic1 from "./components/Basic1";
+import Basic2 from "./components/Basic2";
 import MyBlog from "./components/MyBlog";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Routes>
         <Route path="/" element={<Basic1 />}></Route>
+        <Route path="/basic2" element={<Basic2 />}></Route>
         <Route path="myblog" element={<MyBlog />}></Route>
+        <Route path="/apifetch" element={<ApiFetch />}></Route>
       </Routes>
     </>
   );

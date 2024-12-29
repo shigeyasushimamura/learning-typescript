@@ -1,24 +1,55 @@
 import React, { useState } from "react";
-import Basic1Child from "./Basic1Child";
+import styles from "./Basic1.module.css";
 
 const Basic1 = () => {
-  const [count, setCount] = useState(0);
+  const [product, setProduct] = useState({ name: "", price: "" });
 
-  const clickHandler = () => {
-    console.log("clicked!");
-    setCount((count) => count + 1);
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setProduct({ ...product, name: e.target.value });
   };
 
   return (
     <>
       <main>
-        <div className="">
-          <h1>Basic1</h1>
-          <Basic1Child name="hoge" />
-          <Basic1Child name="fuga" />
+        <h1>プロダクト管理</h1>
+
+        <div>
+          <article>
+            <h4>Product name is {product.name}</h4>
+            <h4>Product price is {product.price}</h4>
+          </article>
+          <form className={styles.form}>
+            <h1>入力フォーム</h1>
+            <div className={styles.container}>
+              <div>
+                <label htmlFor="name" className={styles.label}>
+                  new Product name
+                </label>
+                <input
+                  className={styles.input}
+                  type="text"
+                  value={product.name}
+                  onChange={(e) => handleNameChange(e)}
+                />
+              </div>
+
+              <div className="">
+                <label htmlFor="price" className={styles.label}>
+                  new Product Price
+                </label>
+                <input
+                  id="price"
+                  type="text"
+                  className={styles.input}
+                  value={product.price}
+                  onChange={(e) =>
+                    setProduct({ ...product, price: e.target.value })
+                  }
+                />
+              </div>
+            </div>
+          </form>
         </div>
-        <p>Click count:{count}</p>
-        <button onClick={clickHandler}>Click Me!</button>
       </main>
     </>
   );
