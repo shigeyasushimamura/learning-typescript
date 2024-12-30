@@ -1,0 +1,72 @@
+.appRow {
+  display: flex;
+  justify-content: center;
+}
+
+.appRow.appHeader {
+  color: #fff;
+  background-color: #1a1a16;
+  height: 5.6rem;
+  align-items: center;
+  border-bottom: 1px solid #bee92f;
+  padding: 0 10px;
+}
+
+.appRow.appHeader .appRowContent {
+  width: 100%;
+  position: relative;
+}
+
+.headerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.4rem;
+  height: 100%;
+}
+
+.headerVerticalDivider {
+  border-left: 2px solid #767d82;
+  height: 40%;
+  min-width: 1px;
+}
+
+.headerFlex {
+  flex: 1;
+  min-width: 1px;
+}
+
+.headerTitle {
+  display: flex;
+  font-size: 1.4rem;
+}
+
+.headerSubTitle {
+  display: flex;
+  font-size: 1.2rem;
+}
+
+.textOutlineShadow {
+  text-shadow: 2px 2px 0px #6d6e53,
+    /* 上右方向のアウトライン */ -2px -2px 0px #6d6e53,
+    /* 下左方向のアウトライン */ 2px -2px 0px #6d6e53,
+    /* 上左方向のアウトライン */ -2px 2px 0px #6d6e53; /* 下右方向のアウトライン */
+}
+
+.btnIconMedium {
+  padding: 0 1rem;
+  width: 4rem;
+  height: 3rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.btnIcon {
+  min-width: auto;
+  border-radius: 1rem;
+}
+
+.btnOutlineWhite {
+  background-color: white;
+  border: 1px solid black;
+}
