@@ -18,7 +18,10 @@ const App: FC = () => {
     <div className="app_container">
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-          <Routes></Routes>
+          <Routes>
+            <Route path="/" element={<MainTask />} />
+            <Route path="/tags" element={<MainTag />} />
+          </Routes>
         </BrowserRouter>
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
