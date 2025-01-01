@@ -1,8 +1,8 @@
 import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronDoubleRightIcon } from "@heroicons/react/solid";
-import { TaskListMemo } from "./TaskList";
-import { TaskEditMemo } from "./TaskEdit";
+import { TaskListMemo } from "../Task/TaskList";
+import { TaskEditMemo } from "../Task/TaskEdit";
 
 export const MainTask: FC = () => {
   const navigate = useNavigate();

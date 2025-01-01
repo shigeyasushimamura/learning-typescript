@@ -1,5 +1,5 @@
 import { FC, memo } from "react";
-import { useQueryTags } from "../hooks/useQueryTag";
+import { useQueryTags } from "../../hooks/useQueryTag";
 import { TagItemMemo } from "./TagItem";
 // import { useQueryClient } from '@tanstack/react-query'
 // import { Tag } from '../types/types'

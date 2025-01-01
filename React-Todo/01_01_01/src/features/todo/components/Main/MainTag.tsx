@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronDoubleLeftIcon } from "@heroicons/react/solid";
-import { TagListMemo } from "./TagList";
-import { TagEditMemo } from "./TagEdit";
+import { TagListMemo } from "../Tag/TagList";
+import { TagEditMemo } from "../Tag/TagEdit";
 
 export const MainTag: FC = () => {
   const navigate = useNavigate();

@@ -1,9 +1,9 @@
 import { FC, memo } from "react";
-import { useAppDispatch } from "../../../hooks";
-import { setEditedTag } from "../slices/todoSlice";
+import { useAppDispatch } from "../../../../hooks";
+import { setEditedTag } from "../../slices/todoSlice";
 import { PencilAltIcon, TrashIcon } from "@heroicons/react/solid";
-import { useMutateTag } from "../hooks/useMutateTag";
-import { Tag } from "../../../types/types";
+import { useMutateTag } from "../../hooks/useMutateTag";
+import { Tag } from "../../../../types/types";
 
 interface Props {
   tag: Tag;

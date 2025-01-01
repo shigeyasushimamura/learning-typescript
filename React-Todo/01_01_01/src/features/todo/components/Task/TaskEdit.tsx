@@ -1,8 +1,8 @@
 import { FC, memo, FormEvent } from "react";
-import { useAppDispatch, useAppSelector } from "../../../hooks";
-import { setEditedTask, selectTask } from "../slices/todoSlice";
-import { useQueryTags } from "../hooks/useQueryTag";
-import { useMutateTask } from "../hooks/useMutateTask";
+import { useAppDispatch, useAppSelector } from "../../../../hooks";
+import { setEditedTask, selectTask } from "../../slices/todoSlice";
+import { useQueryTags } from "../../hooks/useQueryTag";
+import { useMutateTask } from "../../hooks/useMutateTask";
 
 const TaskEdit: FC = () => {
   const editedTask = useAppSelector(selectTask);

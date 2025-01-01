@@ -1,5 +1,5 @@
 import { FC, memo } from "react";
-import { useQueryTasks } from "../hooks/useQueryTasks";
+import { useQueryTasks } from "../../hooks/useQueryTasks";
 import { TaskItemMemo } from "./TaskItem";
 
 const TaskList: FC = () => {

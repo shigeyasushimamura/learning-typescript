@@ -1,9 +1,9 @@
 import { FC, memo } from "react";
-import { useAppDispatch } from "../../../hooks";
-import { setEditedTask } from "../slices/todoSlice";
+import { useAppDispatch } from "../../../../hooks";
+import { setEditedTask } from "../../slices/todoSlice";
 import { PencilAltIcon, TrashIcon } from "@heroicons/react/solid";
-import { useMutateTask } from "../hooks/useMutateTask";
-import { Task } from "../../../types/types";
+import { useMutateTask } from "../../hooks/useMutateTask";
+import { Task } from "../../../../types/types";
 interface Props {
   task: Task;
 }

@@ -1,7 +1,7 @@
 import { FC, memo, FormEvent } from "react";
-import { useAppDispatch, useAppSelector } from "../../../hooks";
-import { setEditedTag, selectTag } from "../slices/todoSlice";
-import { useMutateTag } from "../hooks/useMutateTag";
+import { useAppDispatch, useAppSelector } from "../../../../hooks";
+import { setEditedTag, selectTag } from "../../slices/todoSlice";
+import { useMutateTag } from "../../hooks/useMutateTag";
 
 const TagEdit: FC = () => {
   const editedTag = useAppSelector(selectTag);
