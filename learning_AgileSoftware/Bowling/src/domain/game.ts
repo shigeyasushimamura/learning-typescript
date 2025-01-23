@@ -1,7 +1,5 @@
 export class Game {
   private ball: number;
-  private firstThrow: number;
-  private secondThrow: number;
 
   private itsThrows: number[];
   private itsCurrentThrow: number;
@@ -11,6 +9,7 @@ export class Game {
   constructor(private itsScore: number = 0) {
     this.itsThrows = new Array<number>(21);
     this.itsCurrentThrow = 0;
+    this.ball = 0;
   }
 
   public getScore(): number {
@@ -42,9 +41,9 @@ export class Game {
     this.ball = 0;
 
     for (let i = 0; i < frame; i++) {
-      this.firstThrow = this.itsThrows[this.ball++];
-      if (this.firstThrow == 10) {
-        score += 10 + this.itsThrows[this.ball] + this.itsThrows[this.ball + 1];
+      if (this.strike()) {
+        this.ball++;
+        score += 10 + this.nextTwoBalls();
       } else {
         score += this.handleSecondThrow();
       }
@@ -55,18 +54,39 @@ export class Game {
 
   private handleSecondThrow(): number {
     let score = 0;
-    this.secondThrow = this.itsThrows[this.ball++];
 
-    const frameScore = this.firstThrow + this.secondThrow;
-    if (frameScore == 10) {
-      score += frameScore + this.itsThrows[this.ball];
+    if (this.spare()) {
+      this.ball += 2;
+      score += 10 + this.nextBall();
     } else {
-      score += frameScore;
+      score += this.twoBallInFrame();
+      this.ball += 2;
     }
+
     return score;
   }
 
   public getCurrentFrame() {
     return this.itsCurrentFrame;
+  }
+
+  private strike(): boolean {
+    return this.itsThrows[this.ball] == 10;
+  }
+
+  private nextTwoBalls(): number {
+    return this.itsThrows[this.ball] + this.itsThrows[this.ball + 1];
+  }
+
+  private spare(): boolean {
+    return this.itsThrows[this.ball] + this.itsThrows[this.ball + 1] == 10;
+  }
+
+  private nextBall(): number {
+    return this.itsThrows[this.ball];
+  }
+
+  private twoBallInFrame(): number {
+    return this.itsThrows[this.ball] + this.itsThrows[this.ball + 1];
   }
 }
