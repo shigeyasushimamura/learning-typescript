@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      Person.prototype.hello = function () {
+        console.log("hello " + this.name);
+      };
+
+      Object.prototype.hello = function () {};
+
+      Object.prototype.hello2 = function () {};
+
+      const bob = new Person("bob", 12);
+      bob.hello();
+
+      console.log(bob.hasOwnProperty(hello));
+      console.log(bob.hasOwnProperty("hello"));
+      console.log(bob.hasOwnProperty("name"));
+    </script>
+  </body>
+</html>
